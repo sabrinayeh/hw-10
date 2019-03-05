@@ -43,11 +43,11 @@ for point in destinations:
 	result = requests.request('GET', full_api_url).json()
 
 	
-	print(point, " is located at ", g.latlng)
+	print(point, " is located at ", "(" + "{0:.4f}".format(latitude), ",", "{0:.4f}".format(longitude) + ")")
 	#Get the lat-long coordinates from `geocoder.arcgis`.
 	#Print out the place name and the coordinates.
 
-	print("At", point, "right now, it's", result["currently"]["summary"], "with a temperature of", result["currently"]["temperature"])
+	print("At", point, "right now, it's", result["currently"]["summary"], "with a temperature of", "{0:.1f}".format(result["currently"]["temperature"]), "°F", "\n")
 	# From the result, print out the summary and current temperature.
 
 	
